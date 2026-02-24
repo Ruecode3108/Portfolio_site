@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My portfolio website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ✦ NAVIGATION -->
+    <nav id="home">
+        <a href="#home" class="nav-logo">Ruvarashe Sithole<span>.</span></a>
+
+        <button class="nav-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact" class="nav-cta">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ✦ BENTO GRID -->
+    <main class="bento-grid">
+        <section class="box hero-box">
+            <h1>Creative <br>Portfolio</h1>
+            <p>Crafting digital experiences through Python &amp; Django.</p>
+        </section>
+
+        <section id="about" class="box about-box">
+            <h3>About Me</h3>
+            <p>I am a first-year Computer Science student at Africa University with a passion for building scalable web solutions.<br>
+             I bridge the gap between elegant frontend design and robust backend logic, specializing in Python and the Django framework.
+            </p>
+        </section>
+
+        <section id="work" class="box projects-box">
+            <h3>My Work</h3>
+            <div class="mini-project-list">
+                <ul>
+              <li> <a href="https://github.com/Ruecode3108/verse_garden" target="_blank">Verse Garden on Github</a></li>
+                <li><a href="https://github.com/Ruecode3108/Automation_with_python" target="_blank">Automation with Python on Github</a></li>
+                <li><a href="https://ruecode.pythonanywhere.com/" target="_blank">Verse Garden live website</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="box status-box">
+            <span>Available for work</span>
+        </section>
+    </main>
+
+    <!-- ✦ SKILLS -->
+    <section id="skills" class="skills-container">
+        <h2 class="section-label">Technical Toolkit</h2>
+        <div class="skills-wrapper">
+            <div class="skill-category">
+                <h4>Languages</h4>
+                <ul>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>HTML5 / CSS3</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Frameworks</h4>
+                <ul>
+                    <li>Django</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Tools</h4>
+                <ul>
+                    <li>Git / GitHub</li>
+                    <li>VS Code</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✦ CONTACT FOOTER -->
+    <footer id="contact" class="contact-footer">
+        <div class="contact-content">
+            <h2>Let's build something <br><span>remarkable together.</span></h2>
+            <p>Currently open to freelance opportunities and collaborations.</p>
+            <div class="contact-links">
+                <a href="mailto:ruvarashesithole3108@outlook.com" class="main-cta">Email Me</a>
+                <div class="social-row">
+                    <a href="https://www.linkedin.com/in/ruvarashe-sithole-1485a9338" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/Ruecode3108" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ruvarashe Sithole. Built with passion &amp; coffee.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
