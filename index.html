@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My portfolio website</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
 
     <!-- ✦ NAVIGATION -->
@@ -36,19 +39,21 @@
 
         <section id="about" class="box about-box">
             <h3>About Me</h3>
-            <p>I am a first-year Computer Science student at Africa University with a passion for building scalable web solutions.<br>
-             I bridge the gap between elegant frontend design and robust backend logic, specializing in Python and the Django framework.
+            <p>I am a Second-year Computer Science student at Africa University with a passion for building scalable web
+                solutions.<br>
+                I bridge the gap between elegant frontend design and robust backend logic, specializing in Python and
+                the Django framework.
             </p>
         </section>
 
         <section id="work" class="box projects-box">
             <h3>My Work</h3>
-            <div class="mini-project-list">
-                <ul>
-              <li> <a href="https://github.com/Ruecode3108/verse_garden" target="_blank">Verse Garden on Github</a></li>
-                <li><a href="https://github.com/Ruecode3108/Automation_with_python" target="_blank">Automation with Python on Github</a></li>
-                <li><a href="https://ruecode.pythonanywhere.com/" target="_blank">Verse Garden live website</a></li>
-                </ul>
+            <div class="github-link-container">
+                <a href="https://github.com/Ruecode3108" target="_blank" class="main-cta"
+                    style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; color:inherit;">
+                    <span>View on GitHub</span>
+                    <i data-lucide="github"></i>
+                </a>
             </div>
         </section>
 
@@ -74,6 +79,7 @@
                 <h4>Frameworks</h4>
                 <ul>
                     <li>Django</li>
+                    <li>React Native</li>
                 </ul>
             </div>
             <div class="skill-category">
@@ -92,10 +98,17 @@
             <h2>Let's build something <br><span>remarkable together.</span></h2>
             <p>Currently open to freelance opportunities and collaborations.</p>
             <div class="contact-links">
-                <a href="mailto:ruvarashesithole3108@outlook.com" class="main-cta">Email Me</a>
+                <a href="mailto:ruvarashesithole3108@outlook.com" class="main-cta">
+                    Send a Message
+                    <i data-lucide="mail"></i>
+                </a>
                 <div class="social-row">
-                    <a href="https://www.linkedin.com/in/ruvarashe-sithole-1485a9338" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/Ruecode3108" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/ruvarashe-sithole-1485a9338" target="_blank">
+                        <i data-lucide="linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/Ruecode3108" target="_blank">
+                        <i data-lucide="github"></i> GitHub
+                    </a>
                 </div>
             </div>
         </div>
@@ -106,4 +119,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

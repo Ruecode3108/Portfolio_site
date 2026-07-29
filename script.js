@@ -1,4 +1,9 @@
 // ─────────────────────────────────────────
+//  Initialize Lucide Icons
+// ─────────────────────────────────────────
+lucide.createIcons();
+
+// ─────────────────────────────────────────
 //  Mobile Navigation Toggle
 // ─────────────────────────────────────────
 const navToggle = document.querySelector('.nav-toggle');
@@ -38,3 +43,20 @@ const observer = new IntersectionObserver(
 );
 
 sections.forEach(section => observer.observe(section));
+
+// ─────────────────────────────────────────
+//  Bento Box Magnetic Effect (Subtle)
+// ─────────────────────────────────────────
+document.querySelectorAll('.box').forEach(box => {
+    box.addEventListener('mousemove', (e) => {
+        const { left, top, width, height } = box.getBoundingClientRect();
+        const x = (e.clientX - left - width / 2) / 25;
+        const y = (e.clientY - top - height / 2) / 25;
+        box.style.transform = `scale(1.02) rotateX(${-y}deg) rotateY(${x}deg)`;
+    });
+
+    box.addEventListener('mouseleave', () => {
+        box.style.transform = `scale(1) rotateX(0) rotateY(0)`;
+    });
+});
+
