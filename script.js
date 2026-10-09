@@ -1,62 +1,72 @@
-// ─────────────────────────────────────────
-//  Initialize Lucide Icons
-// ─────────────────────────────────────────
 lucide.createIcons();
 
-// ─────────────────────────────────────────
-//  Mobile Navigation Toggle
-// ─────────────────────────────────────────
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks  = document.querySelector('.nav-links');
+const book = document.querySelector('.book');
+const leaves = [...document.querySelectorAll('.leaf')];
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+const status = document.getElementById('status');
+const wide = window.matchMedia('(min-width: 801px)');
 
-navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    navToggle.classList.toggle('active'); // animates hamburger → X
-});
+// spread = how many leaves are flipped.
+// 0 = closed, front cover only. 1 to leaves.length - 1 = open, two pages. leaves.length = closed, back cover only.
+let spread = 0;
 
-// Close menu when a nav link is clicked (good UX on mobile)
-navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        navToggle.classList.remove('active');
-    });
-});
+function go(n) {
+    spread = Math.max(0, Math.min(leaves.length, n));
 
+    book.dataset.state = spread === 0 ? 'start' : spread === leaves.length ? 'end' : 'open';
 
-// ─────────────────────────────────────────
-//  Highlight active nav link on scroll
-// ─────────────────────────────────────────
-const sections = document.querySelectorAll('section[id], nav[id], footer[id]');
-const allNavLinks = document.querySelectorAll('.nav-links a');
+    leaves.forEach(function (leaf, i) {
+        const flipped = i < spread;
+        leaf.classList.toggle('flipped', flipped);
+        leaf.style.zIndex = flipped ? i + 1 : leaves.length - i;
 
-const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                allNavLinks.forEach(link => link.classList.remove('active'));
-                const activeLink = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
-                if (activeLink) activeLink.classList.add('active');
-            }
-        });
-    },
-    { threshold: 0.4 }
-);
-
-sections.forEach(section => observer.observe(section));
-
-// ─────────────────────────────────────────
-//  Bento Box Magnetic Effect (Subtle)
-// ─────────────────────────────────────────
-document.querySelectorAll('.box').forEach(box => {
-    box.addEventListener('mousemove', (e) => {
-        const { left, top, width, height } = box.getBoundingClientRect();
-        const x = (e.clientX - left - width / 2) / 25;
-        const y = (e.clientY - top - height / 2) / 25;
-        box.style.transform = `scale(1.02) rotateX(${-y}deg) rotateY(${x}deg)`;
+        // Only the visible faces are reachable by keyboard
+        leaf.querySelector('.front').inert = wide.matches && i !== spread;
+        leaf.querySelector('.back').inert = wide.matches && i !== spread - 1;
     });
 
-    box.addEventListener('mouseleave', () => {
-        box.style.transform = `scale(1) rotateX(0) rotateY(0)`;
-    });
+    prevBtn.disabled = spread === 0;
+    nextBtn.disabled = spread === leaves.length;
+    status.textContent = spread === 0 ? 'Front cover'
+        : spread === leaves.length ? 'Back cover'
+            : 'Spread ' + spread + ' of ' + (leaves.length - 1);
+}
+
+// Click the right page to go forward, the left page to go back
+book.addEventListener('click', function (e) {
+    if (!wide.matches) return;
+
+    const jump = e.target.closest('[data-spread]');
+    if (jump) {
+        e.preventDefault();
+        go(Number(jump.dataset.spread));
+        return;
+    }
+
+    if (e.target.closest('a, button')) return;
+
+    const face = e.target.closest('.face');
+    if (!face) return;
+    go(face.classList.contains('front') ? spread + 1 : spread - 1);
 });
 
+prevBtn.addEventListener('click', function () { go(spread - 1); });
+nextBtn.addEventListener('click', function () { go(spread + 1); });
+
+document.addEventListener('keydown', function (e) {
+    if (!wide.matches) return;
+    if (e.key === 'ArrowRight') go(spread + 1);
+    if (e.key === 'ArrowLeft') go(spread - 1);
+});
+
+wide.addEventListener('change', function () { go(spread); });
+
+// If a real picture exists in /images, hide the placeholder icon
+document.querySelectorAll('.photo[data-src]').forEach(function (photo) {
+    const img = new Image();
+    img.onload = function () { photo.classList.add('has-img'); };
+    img.src = photo.dataset.src;
+});
+
+go(0);

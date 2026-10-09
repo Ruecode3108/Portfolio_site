@@ -4,118 +4,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My portfolio website</title>
+    <title>Ruvarashe Sithole | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
 
-    <!-- ✦ NAVIGATION -->
-    <nav id="home">
-        <a href="#home" class="nav-logo">Ruvarashe Sithole<span>.</span></a>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="d-star" viewBox="0 0 24 24">
+            <path d="M12 3l2.6 5.6 6 .8-4.4 4.2 1.1 6L12 16.7l-5.300 2.900 1.100-6L3.400 9.400l6-.8z" />
+        </symbol>
+        <symbol id="d-heart" viewBox="0 0 24 24">
+            <path
+                d="M12 20s-7-4.400-8.500-9A4.600 4.600 0 0 1 12 7.200 4.600 4.600 0 0 1 20.500 11C19 15.600 12 20 12 20z" />
+        </symbol>
+        <symbol id="d-sparkle" viewBox="0 0 24 24">
+            <path d="M12 3c.5 5 2 6.500 7 7-5 .5-6.500 2-7 7-.5-5-2-6.500-7-7 5-.5 6.500-2 7-7z" />
+        </symbol>
+        <symbol id="d-flower" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="2.200" />
+            <path
+                d="M12 9.800C9 4 15 4 12 9.800zM14.200 12C20 9 20 15 14.200 12zM12 14.200C15 20 9 20 12 14.200zM9.800 12C4 15 4 9 9.800 12z" />
+        </symbol>
+        <symbol id="d-cup" viewBox="0 0 24 24">
+            <path
+                d="M5 9h11v6a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5V9zM16 10h2a2.500 2.500 0 0 1 0 5h-2M8 3c-1 1.500 1 2.500 0 4M12 3c-1 1.500 1 2.500 0 4" />
+        </symbol>
+        <symbol id="d-squiggle" viewBox="0 0 48 12">
+            <path d="M2 6c4-6 8-6 12 0s8 6 12 0 8-6 12 0 4 3 6 2" />
+        </symbol>
+        <symbol id="d-arrow" viewBox="0 0 48 32">
+            <path d="M3 6c14-6 34-2 36 14M39 20l-7-5M39 20l6-7" />
+        </symbol>
+        <symbol id="d-ring" viewBox="0 0 60 30">
+            <path d="M30 3C10 2 2 10 6 18s28 11 46 5 8-18-14-20" />
+        </symbol>
+    </svg>
 
-        <button class="nav-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+    <main class="book" aria-label="Portfolio scrapbook" data-state="start">
 
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#contact" class="nav-cta">Contact</a></li>
-        </ul>
-    </nav>
+        <div class="base base-left page"></div>
+        <div class="base base-right page"></div>
 
-    <!-- ✦ BENTO GRID -->
-    <main class="bento-grid">
-        <section class="box hero-box">
-            <h1>Creative <br>Portfolio</h1>
-            <p>Crafting digital experiences through Python &amp; Django.</p>
-        </section>
+        <div class="leaf">
+            <article class="face front page" id="p-hello">
+                <div class="tape blush" style="top:-.6em; left:30%; rotate:-4deg"></div>
+                <p class="hand">hi, I'm Ruvarashe</p>
+                <h1>Creative<br>Portfolio</h1>
+                <p class="lede">Building mobile apps, games and developer tools.</p>
+                <div class="polaroid" style="rotate:3deg; align-self:flex-end; margin-right:1em">
+                    <div class="photo" data-src="assets/me.jpg"
+                        style="--img:url(assets/me.jpg); --c1:#eab9b4; --c2:#b9cbd6"><i data-lucide="code"></i></div>
+                    <span class="caption">second year, Africa University</span>
+                </div>
+                <p class="note" style="rotate:-3deg">flip the page to see what I've been building</p>
 
-        <section id="about" class="box about-box">
-            <h3>About Me</h3>
-            <p>I am a Second-year Computer Science student at Africa University with a passion for building scalable web
-                solutions.<br>
-                I bridge the gap between elegant frontend design and robust backend logic, specializing in Python and
-                the Django framework.
-            </p>
-        </section>
+                <div class="sticker " style="--sc:#eab9b4; top:1.2em;right:1.4em;width:6.4em;rotate:8deg"
+                    aria-hidden="true"><svg>
+                        <use href="#d-heart" />
+                    </svg><span>hello!</span></div>
+                <svg class="doodle blue" style="left:3em;top:19em;width:3.4em;rotate:-8deg" aria-hidden="true">
+                    <use href="#d-sparkle" />
+                </svg>
+                <svg class="doodle rose" style="left:3em;top:24em;width:8em" aria-hidden="true">
+                    <use href="#d-squiggle" />
+                </svg>
+                <svg class="doodle rose" style="left:9.5em;top:27em;width:2.4em;rotate:12deg" aria-hidden="true">
+                    <use href="#d-heart" />
+                </svg>
+            </article>
 
-        <section id="work" class="box projects-box">
-            <h3>My Work</h3>
-            <div class="github-link-container">
-                <a href="https://github.com/Ruecode3108" target="_blank" class="main-cta"
-                    style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; color:inherit;">
-                    <span>View on GitHub</span>
-                    <i data-lucide="github"></i>
-                </a>
-            </div>
-        </section>
+            <article class="face back page" id="p-contents">
+                <div class="tape sage" style="top:-.6em; left:22%; rotate:3deg"></div>
+                <h2>Inside</h2>
+                <ol class="contents">
+                    <li><a href="#p-hello" data-spread="0"><span>Hello</span><b>1</b></a></li>
+                    <li><a href="#p-about" data-spread="1"><span>About me</span><b>3</b></a></li>
+                    <li><a href="#p-wardrobe" data-spread="2"><span>Wakachena Wardrobe</span><b>4</b></a></li>
+                    <li><a href="#p-bit" data-spread="2"><span>Bit, the VS Code buddy</span><b>5</b></a></li>
+                    <li><a href="#p-colour" data-spread="3"><span>Colour Command</span><b>6</b></a></li>
+                    <li><a href="#p-ruecode" data-spread="3"><span>Ruecode</span><b>7</b></a></li>
+                    <li><a href="#p-skills" data-spread="4"><span>Toolkit</span><b>8</b></a></li>
+                    <li><a href="#p-contact" data-spread="4"><span>Say hello</span><b>9</b></a></li>
+                </ol>
+                <div class="status"><span>Available for work</span></div>
+                <p class="hand small-hand">click a page, use the arrows, or tap a title to jump</p>
 
-        <section class="box status-box">
-            <span>Available for work</span>
-        </section>
-    </main>
-
-    <!-- ✦ SKILLS -->
-    <section id="skills" class="skills-container">
-        <h2 class="section-label">Technical Toolkit</h2>
-        <div class="skills-wrapper">
-            <div class="skill-category">
-                <h4>Languages</h4>
-                <ul>
-                    <li>Python</li>
-                    <li>JavaScript</li>
-                    <li>HTML5 / CSS3</li>
-                    <li>SQL</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h4>Frameworks</h4>
-                <ul>
-                    <li>Django</li>
-                    <li>React Native</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h4>Tools</h4>
-                <ul>
-                    <li>Git / GitHub</li>
-                    <li>VS Code</li>
-                </ul>
-            </div>
+                <svg class="doodle rose" style="top:1.6em;right:2.4em;width:3em;rotate:8deg" aria-hidden="true">
+                    <use href="#d-sparkle" />
+                </svg>
+                <svg class="doodle blue" style="top:7em;right:3em;width:2em;rotate:-12deg" aria-hidden="true">
+                    <use href="#d-star" />
+                </svg>
+                <svg class="doodle rose" style="bottom:2.4em;right:3em;width:3em;rotate:10deg" aria-hidden="true">
+                    <use href="#d-heart" />
+                </svg>
+            </article>
         </div>
-    </section>
 
-    <!-- ✦ CONTACT FOOTER -->
-    <footer id="contact" class="contact-footer">
-        <div class="contact-content">
-            <h2>Let's build something <br><span>remarkable together.</span></h2>
-            <p>Currently open to freelance opportunities and collaborations.</p>
-            <div class="contact-links">
-                <a href="mailto:ruvarashesithole3108@outlook.com" class="main-cta">
-                    Send a Message
-                    <i data-lucide="mail"></i>
+        <div class="leaf">
+            <article class="face front page" id="p-about">
+                <div class="tape butter" style="top:-.6em; right:20%; rotate:5deg"></div>
+                <h2>About me</h2>
+                <p>I'm a second-year Computer Science student at Africa University who learns by building: mobile apps,
+                    games, desktop tools and web projects.</p>
+                <p>I care about clean structure, apps that keep working offline, and things that look as good as they
+                    run. React Native and Unity are my main tools right now.</p>
+                <p class="note" style="rotate:2deg">Turn the page to see a few of the things I've built.</p>
+                <a href="https://github.com/Ruecode3108" target="_blank" rel="noopener" class="pill">
+                    <i data-lucide="github"></i> See everything on GitHub
+                </a>
+
+                <div class="sticker deco-b" style="--sc:#a9b98f; left:2.6em;bottom:3em;width:7.4em;rotate:-6deg"
+                    aria-hidden="true"><svg>
+                        <use href="#d-cup" />
+                    </svg><span>code & coffee</span></div>
+                <svg class="doodle rose deco-b" style="right:3em;bottom:4em;width:6em;rotate:10deg" aria-hidden="true">
+                    <use href="#d-flower" />
+                </svg>
+                <svg class="doodle blue deco-b" style="right:9em;bottom:2em;width:2.4em;rotate:-10deg"
+                    aria-hidden="true">
+                    <use href="#d-star" />
+                </svg>
+                <svg class="doodle sage deco-b" style="left:12em;bottom:9em;width:3em" aria-hidden="true">
+                    <use href="#d-sparkle" />
+                </svg>
+            </article>
+
+            <article class="face back page" id="p-wardrobe">
+                <div class="tape sky" style="top:-.6em; left:12%; rotate:-3deg"></div>
+                <h2>Wakachena Wardrobe</h2>
+                <p class="hand">a smart wardrobe and outfit stylist</p>
+                <div class="polaroid" style="rotate:-2deg">
+                    <div class="photo" data-src="assets/wardrobe.png"
+                        style="--img:url(assets/wardrobe.png); --c1:#d9b99b; --c2:#a67c52"></div>
+                    <span class="caption">home screen</span>
+                </div>
+                <p>Plan outfits from the clothes you already own. A custom rule-based engine scores combinations, and
+                    the app includes Travel Mode and eight switchable themes.</p>
+                <div class="tags"><span>React Native</span><span>Expo</span><span>TypeScript</span><span>SQLite</span>
+                </div>
+                <p class="note" style="rotate:2deg">Finished and working. Not released yet.</p>
+
+                <div class="sticker " style="--sc:#b9cbd6; top:10.4em;right:1.6em;width:7em;rotate:7deg"
+                    aria-hidden="true"><svg>
+                        <use href="#d-star" />
+                    </svg><span>finished!</span></div>
+                <svg class="doodle rose" style="right:3.4em;top:19.6em;width:3em;rotate:-10deg" aria-hidden="true">
+                    <use href="#d-sparkle" />
+                </svg>
+                <svg class="doodle rose" style="right:9.4em;top:21em;width:2em;rotate:8deg" aria-hidden="true">
+                    <use href="#d-heart" />
+                </svg>
+            </article>
+        </div>
+
+        <div class="leaf">
+            <article class="face front page" id="p-bit">
+                <div class="tape blush" style="top:-.6em; right:15%; rotate:4deg"></div>
+                <h2>Bit</h2>
+                <p class="hand">a coding buddy that lives in VS Code</p>
+                <div class="polaroid" style="rotate:2deg">
+                    <div class="photo" data-src="assets/extension.png"
+                        style="--img:url(assets/extension.png); --c1:#a9b98f; --c2:#5d3a24"></div>
+                    <span class="caption">Bit in the sidebar</span>
+                </div>
+                <p>A VS Code extension with a small companion character in the sidebar. Bit celebrates when your code
+                    works and reacts when it breaks. I built it step by step as a learning exercise.</p>
+                <div class="tags"><span>VS Code extension</span></div>
+                <p class="note" style="rotate:-2deg">Errors have never been this friendly.</p>
+
+                <div class="sticker " style="--sc:#a9b98f; top:10.4em;right:1.6em;width:7em;rotate:-7deg"
+                    aria-hidden="true"><svg>
+                        <use href="#d-sparkle" />
+                    </svg><span>beep boop</span></div>
+                <svg class="doodle blue" style="right:3.4em;top:19.6em;width:2.6em;rotate:10deg" aria-hidden="true">
+                    <use href="#d-star" />
+                </svg>
+                <svg class="doodle sage" style="right:2.4em;top:23em;width:7em" aria-hidden="true">
+                    <use href="#d-squiggle" />
+                </svg>
+            </article>
+
+            <article class="face back page" id="p-colour">
+                <div class="tape butter" style="top:-.6em; left:35%; rotate:2deg"></div>
+                <h2>Colour Command</h2>
+                <p class="hand">a mobile game about trusting your eyes</p>
+                <div class="polaroid" style="rotate:-3deg">
+                    <div class="photo" data-src="assets/colour-command.png"
+                        style="--img:url(assets/colour-command.png); --c1:#b9cbd6; --c2:#eab9b4"></div>
+                    <span class="caption">gameplay</span>
+                </div>
+                <p>Built around the Stroop effect: what a word says fights with the colour it's printed in.
+                    Built in Unity 6 with LevelPlay ads. Not released yet.</p>
+                <div class="tags"><span>Unity 6</span><span>C#</span><span>LevelPlay</span></div>
+                <p class="note" style="rotate:2deg">Release coming soon.</p>
+
+                <div class="sticker " style="--sc:#f4e08c; top:10.4em;right:1.6em;width:7em;rotate:6deg"
+                    aria-hidden="true"><svg>
+                        <use href="#d-star" />
+                    </svg><span>coming soon</span></div>
+                <svg class="doodle rose" style="right:3em;top:19.6em;width:3em;rotate:12deg" aria-hidden="true">
+                    <use href="#d-sparkle" />
+                </svg>
+                <svg class="doodle blue" style="right:2em;top:23.4em;width:8em;rotate:-6deg" aria-hidden="true">
+                    <use href="#d-ring" />
+                </svg>
+            </article>
+        </div>
+
+        <div class="leaf">
+            <article class="face front page" id="p-ruecode">
+                <div class="tape blush" style="top:-.6em; left:35%; rotate:2deg"></div>
+                <h2>Ruecode</h2>
+                <p class="hand">a TikTok account where I share insights on coding</p>
+                <div class="polaroid" style="rotate:-3deg">
+                    <div class="photo" data-src="assets/ruecode.png"
+                        style="--img:url(assets/ruecode.png); --c1:#eab9b4; --c2:#b9cbd6"><i data-lucide="video"></i>
+                    </div>
+                    <span class="caption">follow along</span>
+                </div>
+                <p>Just a tech student sharing what I learn while I build.</p>
+                <div class="tags"><span>TikTok</span><span>Build in public</span><span>Beginner-friendly</span></div>
+                <p class="note" style="rotate:2deg">The things nobody told me when I started.</p>
+                <div class="sticker " style="--sc:#f4e08c; top:10.4em;right:1.6em;width:7em;rotate:6deg"
+                    aria-hidden="true"><svg>
+                        <use href="#d-heart" />
+                    </svg><span>follow me!</span></div>
+                <svg class="doodle rose" style="right:3em;top:19.6em;width:3em;rotate:12deg" aria-hidden="true">
+                    <use href="#d-sparkle" />
+                </svg>
+                <svg class="doodle blue" style="right:2.4em;top:23.4em;width:7em;rotate:-4deg" aria-hidden="true">
+                    <use href="#d-squiggle" />
+                </svg>
+            </article>
+
+            <article class="face back page" id="p-skills">
+                <div class="tape sage" style="top:-.6em; right:25%; rotate:-3deg"></div>
+                <h2>Technical Toolkit</h2>
+                <div class="skill-category">
+                    <h4>Languages</h4>
+                    <div class="tags"><span>Python</span><span>JavaScript</span><span>C#</span><span>HTML5 /
+                            CSS3</span><span>SQL</span></div>
+                </div>
+                <div class="skill-category">
+                    <h4>Frameworks &amp; engines</h4>
+                    <div class="tags"><span>Django</span><span>React Native</span><span>Unity</span></div>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools</h4>
+                    <div class="tags"><span>Git / GitHub</span><span>VS Code</span></div>
+                </div>
+
+                <svg class="doodle rose" style="top:2em;right:3em;width:3em;rotate:8deg" aria-hidden="true">
+                    <use href="#d-sparkle" />
+                </svg>
+                <div class="sticker deco-b" style="--sc:#eab9b4; right:2.6em;bottom:2.6em;width:7.4em;rotate:6deg"
+                    aria-hidden="true"><svg>
+                        <use href="#d-star" />
+                    </svg><span>always learning</span></div>
+                <svg class="doodle sage deco-b" style="left:3em;bottom:3em;width:5em;rotate:-8deg" aria-hidden="true">
+                    <use href="#d-flower" />
+                </svg>
+            </article>
+        </div>
+
+        <div class="leaf">
+            <article class="face front page" id="p-contact">
+                <div class="tape blush" style="top:-.6em; left:18%; rotate:-5deg"></div>
+                <h2 class="big">Let's build something remarkable together.</h2>
+                <p>Currently open to freelance opportunities and collaborations.</p>
+                <a href="mailto:ruvarashesithole3108@outlook.com" class="pill solid">
+                    <i data-lucide="mail"></i> Send a message
                 </a>
                 <div class="social-row">
-                    <a href="https://www.linkedin.com/in/ruvarashe-sithole-1485a9338" target="_blank">
+                    <a href="https://www.linkedin.com/in/ruvarashe-sithole-1485a9338" target="_blank" rel="noopener">
                         <i data-lucide="linkedin"></i> LinkedIn
                     </a>
-                    <a href="https://github.com/Ruecode3108" target="_blank">
+                    <a href="https://github.com/Ruecode3108" target="_blank" rel="noopener">
                         <i data-lucide="github"></i> GitHub
                     </a>
                 </div>
-            </div>
+
+                <svg class="doodle rose deco-b" style="left:15em;top:19em;width:6em;rotate:20deg" aria-hidden="true">
+                    <use href="#d-arrow" />
+                </svg>
+                <div class="sticker deco-b" style="--sc:#eab9b4; right:2.6em;bottom:3.4em;width:6.6em;rotate:-8deg"
+                    aria-hidden="true"><svg>
+                        <use href="#d-heart" />
+                    </svg><span>say hi!</span></div>
+                <svg class="doodle blue deco-b" style="left:3em;bottom:3em;width:5em;rotate:8deg" aria-hidden="true">
+                    <use href="#d-flower" />
+                </svg>
+                <svg class="doodle sage" style="right:2.4em;top:2em;width:2.6em;rotate:12deg" aria-hidden="true">
+                    <use href="#d-star" />
+                </svg>
+            </article>
+
+            <article class="face back page" id="p-end">
+                <p class="hand big-hand">the end (for now)</p>
+                <p class="fine">&copy; 2026 Ruvarashe Sithole. Built with passion &amp; coffee.</p>
+                <a href="#p-hello" data-spread="0" class="pill"><i data-lucide="book-open"></i> Back to the start</a>
+                <svg class="doodle blue" style="top:3em;left:3em;width:3em;rotate:-10deg" aria-hidden="true">
+                    <use href="#d-star" />
+                </svg>
+                <svg class="doodle rose" style="top:4em;right:3em;width:3.6em;rotate:8deg" aria-hidden="true">
+                    <use href="#d-sparkle" />
+                </svg>
+                <svg class="doodle rose" style="bottom:5em;left:4em;width:6em;rotate:-8deg" aria-hidden="true">
+                    <use href="#d-flower" />
+                </svg>
+                <div class="sticker " style="--sc:#f4e08c; bottom:5em;right:4em;width:7em;rotate:7deg"
+                    aria-hidden="true"><svg>
+                        <use href="#d-heart" />
+                    </svg><span>thanks!</span></div>
+            </article>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Ruvarashe Sithole. Built with passion &amp; coffee.</p>
-        </div>
-    </footer>
+
+        <div class="spine" aria-hidden="true"></div>
+    </main>
+
+    <div class="controls">
+        <button id="prev" class="pill solid" aria-label="Previous page">Previous</button>
+        <span id="status" aria-live="polite"></span>
+        <button id="next" class="pill solid" aria-label="Next page">Next</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
