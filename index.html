@@ -40,6 +40,9 @@
         <symbol id="d-ring" viewBox="0 0 60 30">
             <path d="M30 3C10 2 2 10 6 18s28 11 46 5 8-18-14-20" />
         </symbol>
+        <symbol id="d-flame" viewBox="0 0 24 24">
+            <path d="M12 2c-.5 2.5-3 5-3 8a6 6 0 0 0 12 0c0-4-3-6-4.5-8.5C16 4 14.5 3 12 2zM12 18a3 3 0 0 1-3-3c0-1.8 1.5-3 3-4.5 1.5 1.5 3 2.7 3 4.5a3 3 0 0 1-3 3z" />
+        </symbol>
     </svg>
 
     <main class="book" aria-label="Portfolio scrapbook" data-state="start">
@@ -82,11 +85,13 @@
                     <li><a href="#p-hello" data-spread="0"><span>Hello</span><b>1</b></a></li>
                     <li><a href="#p-about" data-spread="1"><span>About me</span><b>3</b></a></li>
                     <li><a href="#p-wardrobe" data-spread="2"><span>Wakachena Wardrobe</span><b>4</b></a></li>
-                    <li><a href="#p-bit" data-spread="2"><span>Bit, the VS Code buddy</span><b>5</b></a></li>
+                    <li><a href="#p-motivational-partner" data-spread="2"><span>Motivational-partner</span><b>5</b></a></li>
                     <li><a href="#p-colour" data-spread="3"><span>Colour Command</span><b>6</b></a></li>
                     <li><a href="#p-ruecode" data-spread="3"><span>Ruecode</span><b>7</b></a></li>
-                    <li><a href="#p-skills" data-spread="4"><span>Toolkit</span><b>8</b></a></li>
-                    <li><a href="#p-contact" data-spread="4"><span>Say hello</span><b>9</b></a></li>
+                    <li><a href="#p-ignisguard" data-spread="4"><span>IgnisGuard Fire App</span><b>8</b></a></li>
+                    <li><a href="#p-ignisguard-hub" data-spread="4"><span>Safety Education Hub</span><b>9</b></a></li>
+                    <li><a href="#p-skills" data-spread="5"><span>Toolkit</span><b>10</b></a></li>
+                    <li><a href="#p-contact" data-spread="5"><span>Say hello</span><b>11</b></a></li>
                 </ol>
                 <div class="status"><span>Available for work</span></div>
                 <p class="hand small-hand">click a page, use the arrows, or tap a title to jump</p>
@@ -161,16 +166,16 @@
         </div>
 
         <div class="leaf">
-            <article class="face front page" id="p-bit">
+            <article class="face front page" id="p-motivational-partner">
                 <div class="tape blush" style="top:-.6em; right:15%; rotate:4deg"></div>
-                <h2>Bit</h2>
+                <h2>Motivational-partner</h2>
                 <p class="hand">a coding buddy that lives in VS Code</p>
                 <div class="polaroid" style="rotate:2deg">
                     <div class="photo" data-src="assets/extension.png"
                         style="--img:url(assets/extension.png); --c1:#a9b98f; --c2:#5d3a24"></div>
-                    <span class="caption">Bit in the sidebar</span>
+                    <span class="caption">Motivational-partner in the sidebar</span>
                 </div>
-                <p>A VS Code extension with a small companion character in the sidebar. Bit celebrates when your code
+                <p>A VS Code extension with a companion character in the sidebar. Motivational-partner celebrates when your code
                     works and reacts when it breaks. I built it step by step as a learning exercise.</p>
                 <div class="tags"><span>VS Code extension</span></div>
                 <p class="note" style="rotate:-2deg">Errors have never been this friendly.</p>
@@ -240,6 +245,72 @@
                 </svg>
             </article>
 
+            <article class="face back page" id="p-ignisguard">
+                <div class="tape flame" style="top:-.6em; left:16%; rotate:-3deg"></div>
+                <h2>IGNISGUARD</h2>
+                <p class="hand">smart fire detection &amp; telemetry app UI/UX</p>
+                <div class="screen-deck">
+                    <div class="screen-switcher">
+                        <button class="screen-pill active" type="button" data-screen-target="ig-home">Live Telemetry</button>
+                        <button class="screen-pill" type="button" data-screen-target="ig-alerts">Incident Alerts</button>
+                    </div>
+                    <div class="polaroid phone" id="ig-polaroid-1" style="rotate:-2deg" title="Click to inspect full screen">
+                        <div class="photo has-img" id="ig-photo-1" data-src="assets/ignisguard-home.png"
+                            style="--img:url(assets/ignisguard-home.png); --c1:#e58863; --c2:#2c1810">
+                            <span class="photo-badge"><i data-lucide="maximize-2"></i> Inspect UI</span>
+                        </div>
+                        <span class="caption" id="ig-caption-1">live telemetry &amp; controls</span>
+                    </div>
+                </div>
+                <p>A mobile UI/UX design crafted for early fire hazard prevention. Rather than only sounding alarms during flames, IgnisGuard analyzes live environmental telemetry — measuring smoke, gas, temperature, and humidity to detect hazardous conditions before ignition.</p>
+                <div class="tags"><span>UI/UX Design</span><span>Mobile App</span><span>Figma</span><span>IoT Telemetry</span><span>Early Detection</span></div>
+
+                <div class="sticker" style="--sc:#f4d08c; top:9.8em;right:1.6em;width:7em;rotate:7deg"
+                    aria-hidden="true"><svg>
+                        <use href="#d-flame" />
+                    </svg><span>early alert!</span></div>
+                <svg class="doodle rose" style="right:3.2em;top:19.4em;width:3em;rotate:-10deg" aria-hidden="true">
+                    <use href="#d-sparkle" />
+                </svg>
+                <svg class="doodle blue" style="right:8.8em;top:21.2em;width:2.2em;rotate:8deg" aria-hidden="true">
+                    <use href="#d-star" />
+                </svg>
+            </article>
+        </div>
+
+        <div class="leaf">
+            <article class="face front page" id="p-ignisguard-hub">
+                <div class="tape sage" style="top:-.6em; right:18%; rotate:4deg"></div>
+                <h2>Safety Hub &amp; Controls</h2>
+                <p class="hand">education hub &amp; hardware sensitivity</p>
+                <div class="screen-deck">
+                    <div class="screen-switcher">
+                        <button class="screen-pill active" type="button" data-screen-target="ig-edu">Education Hub</button>
+                        <button class="screen-pill" type="button" data-screen-target="ig-settings">Sensor Settings</button>
+                    </div>
+                    <div class="polaroid phone" id="ig-polaroid-2" style="rotate:2deg" title="Click to inspect full screen">
+                        <div class="photo has-img" id="ig-photo-2" data-src="assets/ignisguard-education.jpg"
+                            style="--img:url(assets/ignisguard-education.jpg); --c1:#a9b98f; --c2:#5d3a24">
+                            <span class="photo-badge"><i data-lucide="maximize-2"></i> Inspect UI</span>
+                        </div>
+                        <span class="caption" id="ig-caption-2">safety education hub</span>
+                    </div>
+                </div>
+                <p>Equipped with an interactive <strong>Safety Education Hub</strong> offering family preparedness quizzes, household escape guides, and drills on handling kitchen emergencies and chemical fires. Features sensitivity baselines (cooking vapor vs. true combustion) and life-safety siren override protocols.</p>
+                <div class="tags"><span>Education Hub</span><span>Fire Protocols</span><span>Hardware Sensitivity</span><span>Life-Safety UX</span></div>
+
+                <div class="sticker" style="--sc:#eab9b4; top:9.8em;right:1.6em;width:7em;rotate:-6deg"
+                    aria-hidden="true"><svg>
+                        <use href="#d-heart" />
+                    </svg><span>safety first!</span></div>
+                <svg class="doodle rose" style="right:3.2em;top:19.4em;width:3em;rotate:12deg" aria-hidden="true">
+                    <use href="#d-sparkle" />
+                </svg>
+                <svg class="doodle sage" style="right:2.4em;top:23em;width:7em" aria-hidden="true">
+                    <use href="#d-squiggle" />
+                </svg>
+            </article>
+
             <article class="face back page" id="p-skills">
                 <div class="tape sage" style="top:-.6em; right:25%; rotate:-3deg"></div>
                 <h2>Technical Toolkit</h2>
@@ -273,11 +344,24 @@
         <div class="leaf">
             <article class="face front page" id="p-contact">
                 <div class="tape blush" style="top:-.6em; left:18%; rotate:-5deg"></div>
-                <h2 class="big">Let's build something remarkable together.</h2>
-                <p>Currently open to freelance opportunities and collaborations.</p>
-                <a href="mailto:ruvarashesithole3108@outlook.com" class="pill solid">
-                    <i data-lucide="mail"></i> Send a message
-                </a>
+                <h2>Let's build together.</h2>
+                <p>Have a project or opportunity? Send me a message directly from here:</p>
+
+                <form class="contact-form" id="contact-form">
+                    <div class="form-row">
+                        <input type="text" name="name" id="contact-name" placeholder="Your Name" required autocomplete="name">
+                        <input type="email" name="email" id="contact-email" placeholder="Your Email" required autocomplete="email">
+                    </div>
+                    <textarea name="message" id="contact-message" rows="3" placeholder="Tell me about your project or idea..." required></textarea>
+                    
+                    <div class="form-action-row">
+                        <button type="submit" class="pill solid submit-btn" id="contact-submit">
+                            <i data-lucide="send"></i> <span>Send Email</span>
+                        </button>
+                        <span id="form-status" class="form-status" aria-live="polite"></span>
+                    </div>
+                </form>
+
                 <div class="social-row">
                     <a href="https://www.linkedin.com/in/ruvarashe-sithole-1485a9338" target="_blank" rel="noopener">
                         <i data-lucide="linkedin"></i> LinkedIn
@@ -285,16 +369,16 @@
                     <a href="https://github.com/Ruecode3108" target="_blank" rel="noopener">
                         <i data-lucide="github"></i> GitHub
                     </a>
+                    <a href="mailto:ruvarashesithole3108@outlook.com">
+                        <i data-lucide="mail"></i> Outlook
+                    </a>
                 </div>
 
-                <svg class="doodle rose deco-b" style="left:15em;top:19em;width:6em;rotate:20deg" aria-hidden="true">
-                    <use href="#d-arrow" />
-                </svg>
-                <div class="sticker deco-b" style="--sc:#eab9b4; right:2.6em;bottom:3.4em;width:6.6em;rotate:-8deg"
+                <div class="sticker deco-b" style="--sc:#eab9b4; right:2.2em;bottom:2.6em;width:6.4em;rotate:-8deg"
                     aria-hidden="true"><svg>
                         <use href="#d-heart" />
                     </svg><span>say hi!</span></div>
-                <svg class="doodle blue deco-b" style="left:3em;bottom:3em;width:5em;rotate:8deg" aria-hidden="true">
+                <svg class="doodle blue deco-b" style="left:3em;bottom:2.4em;width:4.5em;rotate:8deg" aria-hidden="true">
                     <use href="#d-flower" />
                 </svg>
                 <svg class="doodle sage" style="right:2.4em;top:2em;width:2.6em;rotate:12deg" aria-hidden="true">
@@ -329,6 +413,15 @@
         <button id="prev" class="pill solid" aria-label="Previous page">Previous</button>
         <span id="status" aria-live="polite"></span>
         <button id="next" class="pill solid" aria-label="Next page">Next</button>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="image-modal" class="image-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-dialog">
+            <button class="modal-close" id="modal-close" aria-label="Close image preview">&times;</button>
+            <img src="" alt="IGNISGUARD UI Screen Preview" id="modal-img" class="modal-img">
+            <p id="modal-caption" class="modal-caption"></p>
+        </div>
     </div>
 
     <script src="script.js"></script>

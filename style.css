@@ -283,6 +283,10 @@ p {
     --tc: #f0d98a;
 }
 
+.tape.flame {
+    --tc: #e58863;
+}
+
 .polaroid {
     position: relative;
     width: 15em;
@@ -435,20 +439,20 @@ p {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
-    margin-top: 0.6em;
+    gap: 0.35em;
+    margin-top: 0.3em;
 }
 
 .contents a {
     display: flex;
     align-items: baseline;
-    gap: 0.6em;
+    gap: 0.5em;
     color: var(--coffee);
     text-decoration: none;
     font-family: 'Caveat', cursive;
     font-weight: 700;
-    font-size: 1.6em;
-    line-height: 1.2;
+    font-size: 1.4em;
+    line-height: 1.15;
 }
 
 .contents a::after {
@@ -499,6 +503,91 @@ p {
     height: 1.2em;
 }
 
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+    max-width: 32em;
+    margin-top: 0.2em;
+    z-index: 5;
+}
+
+.contact-form .form-row {
+    display: flex;
+    gap: 0.5em;
+    width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.82em;
+    padding: 0.55em 0.8em;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1.5px solid rgba(93, 58, 36, 0.24);
+    border-radius: 0.55em;
+    color: var(--coffee);
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background: #ffffff;
+    border-color: var(--coffee);
+    box-shadow: 0 0 0 3px rgba(44, 24, 16, 0.12);
+}
+
+.contact-form textarea {
+    resize: none;
+    line-height: 1.4;
+}
+
+.contact-form .form-action-row {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    flex-wrap: wrap;
+}
+
+.contact-form .submit-btn {
+    border: none;
+    cursor: pointer;
+    font-size: 0.85em;
+    padding: 0.5em 1.2em;
+    margin-top: 0;
+}
+
+.contact-form .submit-btn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.form-status {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 1.25em;
+    line-height: 1.2;
+}
+
+.form-status.success {
+    color: #27ae60;
+}
+
+.form-status.error {
+    color: #c0392b;
+}
+
+@media (max-width: 520px) {
+    .contact-form .form-row {
+        flex-direction: column;
+    }
+}
+
 
 /* ─────────────────────────────────────────
    CONTROLS
@@ -536,7 +625,7 @@ p {
 
 
 /* ─────────────────────────────────────────
-   SMALL SCREENS: no flipping, pages stack
+   SMALL SCREENS: one page at a time
 ───────────────────────────────────────── */
 @media (max-width: 800px) {
     body {
@@ -544,7 +633,6 @@ p {
         padding: 2rem 0;
     }
 
-    .controls,
     .spine,
     .base-right {
         display: none;
@@ -557,7 +645,7 @@ p {
         perspective: none;
         display: flex;
         flex-direction: column;
-        gap: 1.4em;
+        touch-action: pan-y;
     }
 
     .book {
@@ -569,8 +657,7 @@ p {
     }
 
     .base,
-    .leaf,
-    .face {
+    .leaf {
         position: relative;
         inset: auto;
         width: 100%;
@@ -578,20 +665,24 @@ p {
     }
 
     .leaf {
-        display: flex;
-        flex-direction: column;
-        gap: 1.4em;
-        transform: none !important;
-        transform-style: flat;
+        display: contents;
     }
 
     .face {
+        display: none;
+        position: relative;
+        inset: auto;
+        width: 100%;
+        min-height: 70vh;
+        height: auto;
+        transform: none;
         backface-visibility: visible;
         -webkit-backface-visibility: visible;
     }
 
-    .face.back {
-        transform: none;
+    .face.mobile-active {
+        display: flex;
+        animation: mobile-page-flip 0.45s ease both;
     }
 
     .page {
@@ -606,7 +697,18 @@ p {
     }
 
     .book .face {
-        cursor: default;
+        cursor: pointer;
+    }
+
+    .controls {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.4rem;
+        font-size: 1.25rem;
+    }
+
+    .controls .pill {
+        font-size: 0.8rem;
     }
 
     .big-hand {
@@ -619,6 +721,25 @@ p {
 
     h2.big {
         font-size: 2.2em;
+    }
+}
+
+@keyframes mobile-page-flip {
+    from {
+        opacity: 0;
+        transform: perspective(900px) rotateY(-18deg);
+        transform-origin: left center;
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(900px) rotateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .face.mobile-active {
+        animation: none;
     }
 }
 
@@ -729,4 +850,160 @@ p {
 /* A real picture hides the placeholder icon */
 .photo.has-img svg {
     display: none;
+}
+
+/* ─────────────────────────────────────────
+   IGNISGUARD & SCREEN SHOWCASE
+───────────────────────────────────────── */
+.screen-deck {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    align-self: flex-start;
+}
+
+.screen-switcher {
+    display: inline-flex;
+    gap: 0.4em;
+    align-self: flex-start;
+}
+
+.screen-pill {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78em;
+    font-weight: 500;
+    padding: 0.25em 0.8em;
+    border-radius: 50px;
+    border: 1.2px solid var(--coffee);
+    background: transparent;
+    color: var(--coffee);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+.screen-pill:hover {
+    background: rgba(44, 24, 16, 0.12);
+}
+
+.screen-pill.active {
+    background: var(--coffee);
+    color: var(--champagne);
+    box-shadow: 0 0.2em 0.5em rgba(44, 24, 16, 0.2);
+}
+
+.polaroid.phone {
+    width: 14.8em;
+    padding: 0.6em 0.6em 2.2em;
+    cursor: zoom-in;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.polaroid.phone:hover {
+    box-shadow: 0 0.7em 1.4em rgba(44, 24, 16, 0.35);
+}
+
+.polaroid.phone .photo {
+    height: 10.2em;
+    background-position: top center;
+    background-size: cover;
+    border-radius: 0.25em;
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-badge {
+    position: absolute;
+    bottom: 0.4em;
+    right: 0.4em;
+    background: rgba(44, 24, 16, 0.75);
+    color: var(--white);
+    font-size: 0.65em;
+    font-family: 'Poppins', sans-serif;
+    padding: 0.2em 0.6em;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    backdrop-filter: blur(2px);
+    pointer-events: none;
+}
+
+.photo-badge svg {
+    width: 1em !important;
+    height: 1em !important;
+}
+
+/* ─────────────────────────────────────────
+   IMAGE LIGHTBOX MODAL
+───────────────────────────────────────── */
+.image-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(28, 14, 9, 0.82);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.image-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-dialog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: min(92vw, 440px);
+}
+
+.modal-close {
+    position: absolute;
+    top: -2.8rem;
+    right: 0;
+    background: var(--paper);
+    color: var(--coffee);
+    border: none;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: 0 0.3em 0.8em rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.modal-close:hover {
+    transform: scale(1.1);
+    background: var(--white);
+}
+
+.modal-img {
+    width: 100%;
+    max-height: 80vh;
+    border-radius: 1.2rem;
+    box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.55);
+    border: 3px solid rgba(255, 255, 255, 0.85);
+    object-fit: contain;
+    background: #000;
+}
+
+.modal-caption {
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    color: var(--champagne);
+    margin-top: 0.6rem;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
